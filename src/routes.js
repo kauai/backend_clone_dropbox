@@ -1,8 +1,12 @@
 const express = require('express')
 const routes = express.Router()
+const BoxController = require('./controllers/BoxController')
+
+
+routes.post('/boxes',BoxController.store)
 
 routes.get('/teste',(req,res) => {
-    res.send("<h1>Server rodando</h1>")
+    res.send("<h1>Server rodando noww</h1>")
 })
 
 module.exports = routes
