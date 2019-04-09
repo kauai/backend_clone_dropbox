@@ -17,7 +17,7 @@ mongoose.connect('mongodb://omnistack02:omnistack2012@ds135456.mlab.com:35456/om
 })
 
 app.use(cors)
-app.user((req,res,next) => {
+app.use((req,res,next) => {
    req.io = io
    return next()
 })
