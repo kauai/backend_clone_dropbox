@@ -2,6 +2,9 @@ const express = require("express");
 const mongoose = require('mongoose')
 const path = require('path')
 const app = express();
+
+app.use(cors)
+
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const cors = require('cors')
@@ -16,7 +19,7 @@ mongoose.connect('mongodb://omnistack02:omnistack2012@ds135456.mlab.com:35456/om
     useNewUrlParser:true
 })
 
-app.use(cors)
+
 app.use((req,res,next) => {
    req.io = io
    return next()
